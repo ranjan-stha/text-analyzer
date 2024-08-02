@@ -30,9 +30,10 @@ class LLMRequest:
     def _define_prompt(self):
         template: str = """
         You act as a text analyzer. Go through the following message and return response in Yes, No or Unclear.
-        If the message states if someone is going to be on leave or cannot join to office, respond Yes,
-        If the message states if someone shall join office but will be late, respond No.
-        If you are undecided or the message is not clear, respond Unclear.
+        If the message states if someone is going to be on leave or cannot join to office, respond Yes
+        If the message states if someone shall join office but will be late, respond No
+        If the message states if someone is working from home or wfh, respond No
+        If the message is not clear whether someone is in leave or not, respond Indecisive
 
         Message: {message}
 
